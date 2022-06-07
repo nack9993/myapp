@@ -1,12 +1,12 @@
-import { usePlaylist } from "../../lib/hooks";
+import { useMe, usePlaylist } from "../../lib/hooks";
 
 const Home = () => {
   const { playlists } = usePlaylist();
+  const { user } = useMe();
 
-  console.log(playlists);
-
+  console.log(user);
   return (
-    <div className="h-screen bg-gray">
+    <div className="h-screen bg-gray w-full">
       <div className="w-full flex justify-center">
         <div className="h-full bg-white mt-28 w-[95%]">
           <div className="relative bottom-14  flex justify-between ml-10 mr-10">
@@ -18,7 +18,10 @@ const Home = () => {
               {/* Artist information */}
               <div className="ml-5 mt-3">
                 <div className="text-dark-gray text-sm">Artist</div>
-                <div className="text-black font-bold text-3xl">Nack</div>
+                <div className="text-black font-bold text-3xl">
+                  {user?.firstName} {user?.lastName}
+                </div>
+                {user?.userPlaylistCount}
 
                 {/* Tag */}
                 <div className="flex space-x-2 mt-5">

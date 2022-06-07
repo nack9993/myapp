@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { usePlaylist } from "../lib/hooks";
 
 const Navbar = () => {
@@ -8,11 +9,17 @@ const Navbar = () => {
       <div>
         {playlists.map((playlist) => {
           return (
-            <div
-              className="transition-all cursor-pointer hover:underline"
-              key={playlist.id}
-            >
-              {playlist.name}
+            <div className="cursor-pointer  hover:underline ">
+              <Link
+                href={{
+                  pathname: "/playlist/[id]",
+                  query: { id: playlist.id },
+                }}
+                className="transition-all"
+                key={playlist.id}
+              >
+                {playlist.name}
+              </Link>
             </div>
           );
         })}
