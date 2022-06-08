@@ -9,13 +9,15 @@ const Navbar = () => {
       <div>
         {playlists.map((playlist) => {
           return (
-            <div className="cursor-pointer  hover:underline " key={playlist.id}>
+            <div
+              className="cursor-pointer  hover:underline transition-all"
+              key={playlist.id}
+            >
               <Link
                 href={{
                   pathname: "/playlist/[id]",
                   query: { id: playlist.id },
                 }}
-                className="transition-all"
                 key={playlist.id}
               >
                 {playlist.name}
