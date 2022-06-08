@@ -16,8 +16,6 @@ export const validateRoute = (handler) => {
           where: { id },
         });
 
-        console.log(user);
-
         if (!user) {
           throw new Error("Not real user");
         }
@@ -29,4 +27,10 @@ export const validateRoute = (handler) => {
       return handler(req, res, user);
     }
   };
+};
+
+export const validateToken = (token) => {
+  const user = jwt.verify(token, "hello");
+
+  return user;
 };

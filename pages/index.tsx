@@ -1,4 +1,5 @@
 import Home from "../components/home/home";
+import PlayerBar from "../components/playerBar";
 import prisma from "../lib/prisma";
 
 const Homepage = ({ artists }) => {
