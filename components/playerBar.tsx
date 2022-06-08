@@ -10,7 +10,7 @@ const PlayerBar = () => {
   });
 
   return (
-    <div className="h-[30px] w-full bg-slate-500 shadow-lg">
+    <div className="h-[120px] w-full bg-slate-500 shadow-lg">
       {activeSong ? <Player songs={songs} activeSong={activeSong} /> : null}
     </div>
   );

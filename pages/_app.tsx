@@ -9,11 +9,13 @@ const store = createStore(storeModel);
 const MyApp = ({ Component, pageProps }) => {
   return (
     <StoreProvider store={store}>
-      <div className="flex">
-        <Navbar />
-        <Component {...pageProps} />
+      <div className="h-[87vh]">
+        <div className="h-full flex">
+          <Navbar />
+          <Component {...pageProps} />
+        </div>
+        <PlayerBar />
       </div>
-      <PlayerBar />
     </StoreProvider>
   );
 };
